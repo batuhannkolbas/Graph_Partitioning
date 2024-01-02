@@ -6,8 +6,12 @@ import time
 
 start_time = time.time()
 # Create a sample graph
-G = nx.Graph()
-G.add_edges_from([(1, 2), (1, 3), (2, 3), (2, 4), (3, 4), (4, 5), (4, 6), (6, 7), (7, 8), (2, 9), (5, 10), (9, 11), (3, 8), (11, 12)])
+#G = nx.Graph()
+
+# Creating a graph with approximately 1000 edges
+G = nx.gnm_random_graph(n=100, m=2000)  # 50 nodes and approximately 1000 edges
+
+#G.add_edges_from([(1, 2), (1, 3), (2, 3), (2, 4), (3, 4), (4, 5), (4, 6),(6, 7), (7, 8), (2, 9), (5, 10), (9, 11), (3, 8), (11,12 )])
 
 # Apply Girvan-Newman algorithm for graph partitioning
 communities = girvan_newman(G)
