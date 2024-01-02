@@ -11,12 +11,8 @@ from PIL import Image, ImageTk
 background_label = None
 
 def create_graph():
-    # Define and return the graph
-    G = nx.Graph()
-    G.add_edges_from([
-        (1, 2), (1, 3), (2, 3), (2, 4), (3, 4), (4, 5), (4, 6),
-        (6, 7), (7, 8), (2, 9), (5, 10), (9, 11), (3, 8), (11, 12)
-    ])
+    # Creating a graph with approximately 1000 edges
+    G = nx.gnm_random_graph(n=50, m=1000)  # 100 nodes and approximately 2000 edges
     return G
 
 def display_graph(frame, G, partition, algorithm, complexity):
